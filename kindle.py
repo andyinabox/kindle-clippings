@@ -5,6 +5,7 @@ import collections
 import json
 import os
 import re
+from slugify import slugify
 
 BOUNDARY = u"==========\r\n"
 DATA_FILE = u"clips.json"
@@ -46,7 +47,7 @@ def export_txt(clips):
         for pos in sorted(clips[book]):
             lines.append(clips[book][pos].encode('utf-8'))
 
-        filename = os.path.join(OUTPUT_DIR, u"%s.md" % book)
+        filename = os.path.join(OUTPUT_DIR, u"%s.md" % slugify(book))
         with open(filename, 'wb') as f:
             f.write("\n\n---\n\n".join(lines))
 

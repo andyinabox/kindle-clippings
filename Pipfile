@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 msgpack-python = "*"
+python-slugify = "*"
 
 [dev-packages]
 
