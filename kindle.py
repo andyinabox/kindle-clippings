@@ -45,7 +45,7 @@ def export_txt(clips):
     for book in clips:
         lines = []
         for pos in sorted(clips[book]):
-            lines.append(clips[book][pos].encode('utf-8'))
+            lines.append(("%s\n\n%s" % (clips[book][pos], pos)).encode('utf-8'))#, pos.encode('utf-8')))
 
         filename = os.path.join(OUTPUT_DIR, u"%s.md" % slugify(book))
         with open(filename, 'wb') as f:

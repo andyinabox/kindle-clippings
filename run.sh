@@ -4,6 +4,8 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 CLIPPINGS_PATH="/Volumes/Kindle/documents/My Clippings.txt"
 OUTPUT_PATH="$HOME/Dropbox (Personal)/Writing/Clippings/"
 
+set -e
+
 if [ -f "$CLIPPINGS_PATH" ]; then
   echo "Clippings file found"
   cp "$CLIPPINGS_PATH" "$SCRIPTPATH/"
